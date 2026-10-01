@@ -1,0 +1,15 @@
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\bin\Debug\net10.0\II. Thực hành lập trình Oop.exe
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\bin\Debug\net10.0\II. Thực hành lập trình Oop.deps.json
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\bin\Debug\net10.0\II. Thực hành lập trình Oop.runtimeconfig.json
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\bin\Debug\net10.0\II. Thực hành lập trình Oop.dll
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\bin\Debug\net10.0\II. Thực hành lập trình Oop.pdb
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\II. Thực hành lập trình Oop.GeneratedMSBuildEditorConfig.editorconfig
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\II. Thực hành lập trình Oop.AssemblyInfoInputs.cache
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\II. Thực hành lập trình Oop.AssemblyInfo.cs
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\II. Thực hành lập trình Oop.csproj.CoreCompileInputs.cache
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\II. Thực hành lập trình Oop.dll
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\refint\II. Thực hành lập trình Oop.dll
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\II. Thực hành lập trình Oop.pdb
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\II. Thực hành lập trình Oop.genruntimeconfig.cache
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\ref\II. Thực hành lập trình Oop.dll
+D:\II. Thực hành lập trình Oop\II. Thực hành lập trình Oop\obj\Debug\net10.0\II. Th_c.A5D5D650.Up2Date

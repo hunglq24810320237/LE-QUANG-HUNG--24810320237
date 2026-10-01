@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "II. Thực hành lập trình Oop/1.0.0": {
+        "runtime": {
+          "II. Thực hành lập trình Oop.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "II. Thực hành lập trình Oop/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,57 @@
+Câu 1: Trình bày sự khác nhau giữa Value Types (Kiểu giá trị) và Reference Types (Kiểu tham chiếu) trong C# về cơ chế lưu trữ vùng nhớ (Stack vs Heap).
+
+Trong C#, kiểu dữ liệu được chia thành hai nhóm lớn là Value Type (kiểu giá trị) và Reference Type (kiểu tham chiếu). Điểm khác nhau quan trọng là cách dữ liệu được lưu trữ và cách biến được sao chép khi gán cho biến khác.
+
+1. Value Type (kiểu giá trị): Biến Value Type chứa trực tiếp giá trị của dữ liệu. Các kiểu thường gặp gồm int, float, double, bool, char, struct và enum. Khi gán một biến Value Type cho biến khác thì giá trị được sao chép, vì vậy hai biến độc lập với nhau.
+
+Ví dụ: int a = 10; int b = a; b = 20; Khi đó a vẫn bằng 10 vì b nhận một bản sao của giá trị 10.
+
+Về bộ nhớ, Value Type không phải lúc nào cũng bắt buộc nằm trên Stack. Biến cục bộ kiểu giá trị thường có thể được lưu trên Stack, nhưng nếu Value Type là một trường của một đối tượng thì nó có thể nằm bên trong đối tượng trên Heap. Vì vậy, cách nói chính xác là vị trí lưu trữ Value Type phụ thuộc vào ngữ cảnh.
+
+2. Reference Type (kiểu tham chiếu): Biến Reference Type không chứa trực tiếp toàn bộ đối tượng mà chứa một tham chiếu đến đối tượng. Các kiểu thường gặp gồm class, object, array, delegate và string. Đối tượng được tạo bằng new thường được cấp phát trên managed Heap và được Garbage Collector của .NET quản lý.
+
+Khi gán một biến Reference Type cho biến khác, tham chiếu được sao chép. Hai biến có thể cùng trỏ đến một đối tượng. Vì vậy, thay đổi đối tượng thông qua một biến có thể được nhìn thấy thông qua biến còn lại.
+
+Ví dụ: SinhVien sv1 = new SinhVien(); SinhVien sv2 = sv1; Khi đó sv1 và sv2 cùng tham chiếu đến một đối tượng SinhVien.
+
+Kết luận: Value Type chủ yếu thể hiện việc biến chứa giá trị; Reference Type thể hiện việc biến chứa tham chiếu đến đối tượng. Trong .NET, không nên hiểu đơn giản rằng Value Type luôn nằm trên Stack và Reference Type luôn nằm trên Heap, vì vị trí thực tế còn phụ thuộc vào ngữ cảnh.
+
+Câu 2: Tính năng Init-only Properties (init) trong C# 9/10 khác gì so với thuộc tính có set thông thường? Nêu trường hợp sử dụng thực tế.
+
+Init-only Property là tính năng được giới thiệu từ C# 9, cho phép một thuộc tính được thiết lập giá trị trong quá trình khởi tạo đối tượng nhưng không cho phép thay đổi thông qua việc gán thông thường sau khi đối tượng đã được khởi tạo.
+
+Đối với thuộc tính sử dụng set, giá trị có thể được gán khi khởi tạo và có thể thay đổi bất kỳ lúc nào khi thuộc tính vẫn còn truy cập được.
+
+Ví dụ với set: public string MaSV { get; set; }. Sau khi tạo đối tượng, ta có thể thực hiện sv.MaSV = "SV002"; để thay đổi giá trị.
+
+Ví dụ với init: public string MaSV { get; init; }. Ta có thể thực hiện SinhVien sv = new SinhVien { MaSV = "SV001" }; nhưng sau khi khởi tạo, câu lệnh sv.MaSV = "SV002"; sẽ không được phép.
+
+Ưu điểm của init là giúp tạo các đối tượng có trạng thái ổn định sau khi khởi tạo, hạn chế việc dữ liệu quan trọng bị thay đổi ngoài ý muốn. Nó đặc biệt phù hợp với các đối tượng dữ liệu như mã sinh viên, mã sản phẩm, mã hóa đơn, thông tin cấu hình hoặc các đối tượng chỉ cần thiết lập một lần.
+
+Kết luận: set cho phép đọc và thay đổi giá trị sau khi tạo đối tượng; init cho phép thiết lập giá trị khi khởi tạo nhưng không cho phép gán lại theo cách thông thường sau khi khởi tạo.
+
+Câu 3: Phân biệt sự khác nhau giữa phương thức virtual ở lớp cha và phương thức override ở lớp con khi triển khai tính Đa hình (Polymorphism).
+
+Trong C#, virtual và override là hai từ khóa quan trọng để triển khai đa hình trong lập trình hướng đối tượng.
+
+Phương thức virtual được khai báo ở lớp cha. Nó cung cấp một cách triển khai mặc định và cho phép lớp con ghi đè phương thức đó nếu cần. Nói cách khác, virtual tạo ra khả năng để phương thức được thay đổi trong lớp con.
+
+Phương thức override được khai báo ở lớp con. Nó dùng để cung cấp cách triển khai mới cho phương thức virtual hoặc abstract tương ứng của lớp cha. Phương thức override phải có chữ ký phù hợp với phương thức được ghi đè.
+
+Ví dụ: Lớp cha DongVat có phương thức public virtual void Keu() với cách thực hiện chung. Lớp Cho kế thừa DongVat và khai báo public override void Keu() để thay đổi cách phát ra tiếng kêu thành "Gau gau".
+
+Khi khai báo DongVat dv = new Cho(); và gọi dv.Keu(); chương trình sẽ thực hiện phương thức Keu() của lớp Cho. Đây là đa hình: biến có kiểu tham chiếu lớp cha nhưng đối tượng thực tế là lớp con, nên phương thức override của lớp con được thực hiện tại thời gian chạy.
+
+Kết luận: virtual được dùng ở lớp cha để cho phép ghi đè; override được dùng ở lớp con để ghi đè và thay đổi cách thực hiện phương thức. Sự kết hợp này giúp C# thực hiện đa hình động (runtime polymorphism).
+
+Câu 4: Tại sao một thành phần được khai báo là static trong Lớp (Class) lại không thể truy xuất thông qua một thể hiện (Object Instance) được tạo bằng toán tử new?
+
+Thành phần static thuộc về lớp (Class), không thuộc về một đối tượng cụ thể được tạo bằng toán tử new. Vì vậy, static được tạo và quản lý ở cấp độ lớp và chỉ có một thành phần dùng chung cho các đối tượng của lớp đó.
+
+Ví dụ: class SinhVien { public static string TenTruong = "EPU"; }. Thành phần TenTruong là static nên phải được truy cập thông qua tên lớp: SinhVien.TenTruong.
+
+Khi tạo đối tượng SinhVien sv = new SinhVien();, đối tượng sv có thể truy cập các thành phần instance thuộc về riêng đối tượng đó. Thành phần static không phải là dữ liệu riêng của sv mà là dữ liệu dùng chung cho toàn bộ lớp SinhVien.
+
+Do đó, cách truy cập đúng là SinhVien.TenTruong thay vì sv.TenTruong. Việc dùng tên lớp giúp thể hiện rõ rằng thành phần này thuộc về Class chứ không thuộc về một Object Instance cụ thể.
+
+Kết luận: static thuộc về Class và tồn tại độc lập với từng Object Instance. Thành phần instance thuộc về từng Object. Vì vậy, static được truy cập bằng TênClass.TênThànhPhần, không cần và không nên truy cập thông qua đối tượng được tạo bằng new.
